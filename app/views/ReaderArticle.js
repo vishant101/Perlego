@@ -35,9 +35,19 @@ class ReaderArticle extends Component {
 		const article = articles[articleIndex]
 
 		const jsCode = `
+			var current = 0;
+			var body = $('body');
+			var headings = $('h2');
+			
     		document.addEventListener("message", function(data) {
-				alert(data.data);
-			})`
+				++current;
+
+				if (headings.length > current) {
+					$("html, body").animate( { scrollTop: headings.eq(current).position().top }, 200);
+				}
+
+				event.preventDefault();
+			});`
 
 		return (
 			<View style={{ flex: 1 }}>
