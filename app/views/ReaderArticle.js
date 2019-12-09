@@ -1,35 +1,48 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import {
+	Text,
+	View,
+	StyleSheet,
+	TouchableHighlight
+} from 'react-native';
 import { WebView } from 'react-native-webview'
 import { connect } from 'react-redux'
-import { LocalHtml } from '../html/snakes.html'
-const myHtml = require('./index.html');
+import { BUTTONTEXT, VIEWS, STRINGS } from '../utils/Constants'
+import Button from '../common/Button'
+import css from '../styles/CSS'
 
 class ReaderArticle extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { renderedOnce: false }
-		console.log(myHtml)
 	}
+
 	
-	componentDidMount() {
-		this.setState({ renderedOnce: true });
+	onNextPress(){
+		
 	}
+
+	onPrevPress(){
+		
+	}
+
 	
 	render() {
 		const { articles, articleIndex } = this.props
 		const article = articles[articleIndex]
-		console.log(this.state.renderedOnce)
+
 		return (
-			<WebView 
-				originWhitelist={['*']}
-				ref={webview => { this.myWebview = webview }}
-				source= {{ uri: article.url }}
-				style={{flex: 1}}
-				allowFileAccess={true}
-				allowUniversalAccessFromFileURLs={true}
-			>
-			</WebView>
+			<View style={{ flex: 1 }}>
+				<WebView 
+					ref={webview => { this.myWebview = webview }}
+					source= {{ uri: article.url }}
+					style={{flex: 1  }}
+				/>
+				<View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
+					<Button text={BUTTONTEXT.PREV} onPress={() => this.onPrevPress()} />
+					<Button text={BUTTONTEXT.NEXT} onPress={() => this.onNextPress()} />
+				</View>
+			</View>
+			
 		)
 			
 	}

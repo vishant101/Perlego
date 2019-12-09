@@ -21,7 +21,7 @@ const css = StyleSheet.create({
 	rowTitle: { fontSize: 32 },
 
 	//Button
-	buttonStyle: { width: 200,  marginTop: 10, marginBottom: 10, paddingTop: 10, paddingBottom: 10, marginLeft: 30, marginRight: 30, backgroundColor: COLOR.PRIMARY, borderRadius: 20 },
+	buttonStyle: { width: 150, height: 50,  marginTop: 10, marginBottom: 10, paddingTop: 10, paddingBottom: 10, marginLeft: 30, marginRight: 30, backgroundColor: COLOR.PRIMARY, borderRadius: 20 },
 	buttonTextStyle: { fontSize: 20, color: COLOR.WHITE, textAlign: "center", justifyContent: 'center' },
 })
 	

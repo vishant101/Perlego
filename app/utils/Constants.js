@@ -5,11 +5,9 @@ const VIEWS = {
 }
 
 const BUTTONTEXT = {
-	START: 'Start',
-	SUBMIT: 'Submit',
-	YES: 'Yes',
-	NO: 'No',
-	CLOSE: 'Close'
+    START: 'Start',
+    NEXT: 'Next',
+    PREV: 'Prev',
 }
 
 const STRINGS = {
