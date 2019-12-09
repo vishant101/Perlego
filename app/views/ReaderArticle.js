@@ -18,12 +18,11 @@ class ReaderArticle extends Component {
 	}
 
 	onNextPress(){
-		this.webView.postMessage('Hello from RN')
+		this.webView.postMessage('Next')
 	}
 
 	onPrevPress(){
-		console.log(this.webView)
-		this.webView.postMessage('Hello from RN')
+		this.webView.postMessage('Prev')
 	}
 
 	_reWebView = (webView) => {
@@ -36,16 +35,23 @@ class ReaderArticle extends Component {
 
 		const jsCode = `
 			var current = 0;
-			var body = $('body');
 			var headings = $('h2');
 			
     		document.addEventListener("message", function(data) {
-				++current;
-
-				if (headings.length > current) {
-					$("html, body").animate( { scrollTop: headings.eq(current).position().top }, 200);
+				if (data.data === 'Next'){
+					if (headings.length > current) {
+						++current;
+						$("html, body").animate( { scrollTop: headings.eq(current).position().top }, 200);
+					} else {
+						alert('You have reached the end of the page');
+					}
+				} else {
+					if (current > 0) {
+						--current;
+						$("html, body").animate( { scrollTop: headings.eq(current).position().top }, 200);
+					}
 				}
-
+			
 				event.preventDefault();
 			});`
 
