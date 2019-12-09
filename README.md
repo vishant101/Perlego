@@ -22,7 +22,7 @@ Note: the app ahs only been built and tested for Android devices. iOS functional
 | <img src="https://github.com/vishant101/perlego/blob/master/screenshots/home.png" width="275" alt="Home" title="Home" /> | <img src="https://github.com/vishant101/perlego/blob/master/screenshots/options.png" width="275" alt="Question1" title="Options" /> | <img src="https://github.com/vishant101/perlego/blob/master/screenshots/article.png" width="275" alt="Question2" title="Article" /> |
 
 ## Overview and Arhitecture
-This a multiscreen application built using redux.
+This is a multiscreen application built using redux.
 
 ### Home Screen
 The user is initally presented with a home screen. When the screen is constructed, the list of articles is loaded in from a JSON file. This JSON file is meant to mock an api because in the future the file could be retirved from an external source. The contents of the file are stored in the state using a reducer. Once the user presses start they are taken to the options list.
