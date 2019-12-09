@@ -25,7 +25,9 @@ class ReaderHome extends Component {
 	render() {
 		return (
 			<View style={css.container}>
-				<Image source={IMAGES.BOOK} />
+				<Image
+					source={IMAGES.BOOK} 
+				/>
 				<Text style={css.containerTextStyle}>{STRINGS.HOMETEXT}</Text>
 				<Button text={BUTTONTEXT.START} onPress={() => this.onStartButtonPress()} />
 			</View>
