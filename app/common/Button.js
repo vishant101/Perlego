@@ -4,10 +4,10 @@ import css from '../styles/CSS'
 
 const Button = ({ text, onPress }) => {
     return (
-    <TouchableOpacity
-        style={css.buttonStyle}
-        activeOpacity = { 0.5 }
-        onPress={onPress}
+        <TouchableOpacity
+            style={css.buttonStyle}
+            activeOpacity = { 0.5 }
+            onPress={onPress}
 		>
 			<Text style={css.buttonTextStyle}>{text}</Text>
 		</TouchableOpacity>

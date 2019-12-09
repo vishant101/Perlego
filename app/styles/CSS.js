@@ -15,6 +15,11 @@ const css = StyleSheet.create({
 	containerTextStyle: { color: COLOR.DGREY, padding: 20, fontSize: 16,  textAlign: "center", justifyContent: 'center' },
 	containerHeaderStyle: { color: COLOR.DGREY, marginBottom: 50, padding: 20, fontSize: 30,  textAlign: "center", justifyContent: 'center' },
 
+	//ROW ITEM
+	rowsContainer: { flex: 1 },
+	rowItem: { padding: 20, marginVertical: 8, marginHorizontal: 16 },
+	rowTitle: { fontSize: 32 },
+
 	//Button
 	buttonStyle: { width: 200,  marginTop: 10, marginBottom: 10, paddingTop: 10, paddingBottom: 10, marginLeft: 30, marginRight: 30, backgroundColor: COLOR.PRIMARY, borderRadius: 20 },
 	buttonTextStyle: { fontSize: 20, color: COLOR.WHITE, textAlign: "center", justifyContent: 'center' },

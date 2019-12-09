@@ -1,15 +1,21 @@
 import { combineReducers } from 'redux'
 
 const initialState = {
-	selectedArticle: null,
+    articles: [],
+	articleIndex: 0,
 }
 
 function readerReducer(state = initialState, action) {
 	const newState = { ...state }
 	
 	switch (action.type) {
-		case 'UPDATE_ARTICLE': {
-            newState.selectedArticle = action.selectedArticle
+        case 'SET_ARTICLES': {
+            newState.articles = action.articles
+            console.log(newState)
+			return newState
+		}
+		case 'UPDATE_ARTICLE_INDEX': {
+            newState.articleIndex = action.articleIndex
             console.log(newState)
 			return newState
 		}
