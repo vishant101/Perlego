@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
-import {
-	Text,
-	View,
-	StyleSheet,
-	TouchableHighlight
-} from 'react-native';
+import { View } from 'react-native'
 import { WebView } from 'react-native-webview'
 import { connect } from 'react-redux'
-import { BUTTONTEXT, VIEWS, STRINGS } from '../utils/Constants'
+import { BUTTONTEXT } from '../utils/Constants'
 import Button from '../common/Button'
 import css from '../styles/CSS'
 
@@ -36,8 +31,8 @@ class ReaderArticle extends Component {
 		const jsCode = `
 			var current = 0;
 			var headings = $('h2');
-			
-    		document.addEventListener("message", function(data) {
+
+			document.addEventListener("message", function(data) {
 				if (data.data === 'Next'){
 					if (headings.length > current) {
 						++current;
@@ -51,20 +46,20 @@ class ReaderArticle extends Component {
 						$("html, body").animate( { scrollTop: headings.eq(current).position().top }, 200);
 					}
 				}
-			
+
 				event.preventDefault();
 			});`
 
 		return (
-			<View style={{ flex: 1 }}>
+			<View style={css.articleContainer}>
 				<WebView 
 					ref={this._reWebView}
 					source= {{ uri: article.url }}
-					style={{ flex: 1 }}
+					style={css.articleWebView}
 					injectedJavaScript={jsCode}
           			javaScriptEnabled={true}
 				/>
-				<View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
+				<View style={css.articleButtons}>
 					<Button text={BUTTONTEXT.PREV} onPress={() => this.onPrevPress()} />
 					<Button text={BUTTONTEXT.NEXT} onPress={() => this.onNextPress()} />
 				</View>

@@ -9,11 +9,11 @@ module.exports = {
 			'id': '1',
 			'title': 'Bears',
 			'url': '',
-        },
-        {
+		},
+		{
 			'id': '2',
 			'title': 'Owls',
 			'url': '',
-        }
+		}
 	]
 }
