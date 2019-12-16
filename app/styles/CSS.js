@@ -24,7 +24,7 @@ const css = StyleSheet.create({
 	//Article
 	articleContainer: { flex: 1 },
 	articleWebView: { flex: 1 },
-	articleButtons: { flexDirection: 'row', justifyContent: 'space-between'},
+	articleButtons: { flexDirection: 'row', alignItems:'center', justifyContent:'center' },
 })
 	
 module.exports = css
